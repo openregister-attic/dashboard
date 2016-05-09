@@ -50,9 +50,32 @@ $path: ''
 .column-full
   @include grid-column(1)
 
+.column-one-sixth
+  @include grid-column(1/6)
+
+// Register styles
+// ==========================================================================
+
+div.register
+  background: $grey-3
+  margin-top: 20px
+  padding: 6px
+  min-height: 100px
+
+span.domain
+  background: $alpha-colour
+  font-size: 10px
+  color: white
+  padding: 2px
+  vertical-align: bottom
+
 // Phase styles
 // ==========================================================================
 
+.proposed.heading-medium
+  background: $turquoise
+.prospect.heading-medium
+  background: $light-blue
 .discovery.heading-medium
   background: $discovery-colour
 .alpha.heading-medium
@@ -62,6 +85,10 @@ $path: ''
 .live.heading-medium
   background: $live-colour
 
+.proposed.count
+  color: $turquoise
+.prospect.count
+  color: $light-blue
 .discovery.count
   color: $discovery-colour
 .alpha.count
@@ -71,13 +98,13 @@ $path: ''
 .live.count
   color: $live-colour
 
-.discovery.count, .alpha.count, .beta.count, .live.count
+.proposed.count, .prospect.count, .discovery.count, .alpha.count, .beta.count, .live.count
   font-size: 80px
   text-align: center
   font-weight: bold
   display: block
 
-.discovery.heading-medium, .alpha.heading-medium, .beta.heading-medium, .live.heading-medium
+.proposed.heading-medium, .prospect.heading-medium, .discovery.heading-medium, .alpha.heading-medium, .beta.heading-medium, .live.heading-medium
   color: $page-colour
   text-align: center
   padding-top: 4.8px

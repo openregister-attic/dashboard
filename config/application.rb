@@ -29,5 +29,7 @@ module Dashboard
     # product type may also govern highlight colours
     # known values: information, service
     config.product_type = 'information'
+
+    config.phases = %w[proposed prospect discovery alpha beta live]
   end
 end
