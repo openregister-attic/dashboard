@@ -26,6 +26,12 @@ gem 'openregister-ruby', git: 'https://github.com/robmckinnon/openregister-ruby.
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  gem 'rspec', git: 'https://github.com/rspec/rspec.git', branch: 'master'
+  gem 'rspec-rails', git: 'https://github.com/rspec/rspec-rails.git', branch: 'master'
+  gem 'rspec-core', git: 'https://github.com/rspec/rspec-core.git', branch: 'master'
+  gem 'rspec-support', git: 'https://github.com/rspec/rspec-support.git', branch: 'master'
+  gem 'rspec-expectations', git: 'https://github.com/rspec/rspec-expectations.git', branch: 'master'
+  gem 'rspec-mocks', git: 'https://github.com/rspec/rspec-mocks.git', branch: 'master'
 end
 
 group :development do
@@ -36,7 +42,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 
-  gem 'guard-rspec', require: false
+  gem 'guard-rspec', require: false, git: 'https://github.com/robmckinnon/guard-rspec', branch: 'master'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
