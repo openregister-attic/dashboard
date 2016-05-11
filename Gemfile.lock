@@ -1,4 +1,13 @@
 GIT
+  remote: https://github.com/mongodb/mongoid
+  revision: 7c2ff52a0c5292b8e6bf3a9a29bbb19abae3dd5f
+  specs:
+    mongoid (6.0.0)
+      activemodel (= 5.0.0.rc1)
+      mongo (~> 2.2)
+      tzinfo (>= 0.3.37)
+
+GIT
   remote: https://github.com/robmckinnon/guard-rspec
   revision: 43e9f9800e35a3e479b695d6d4b2bf75134e5020
   branch: master
@@ -114,6 +123,7 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.4.0)
     arel (7.0.0)
+    bson (4.1.1)
     builder (3.2.2)
     byebug (8.2.5)
     capybara (2.7.1)
@@ -181,6 +191,11 @@ GEM
     mime-types (2.99.1)
     mini_portile2 (2.0.0)
     minitest (5.8.4)
+    mongo (2.2.5)
+      bson (~> 4.0)
+    mongoid_slug (4.0.0)
+      mongoid (>= 3.0)
+      stringex (~> 2.0)
     morph (0.4.1)
       activesupport (>= 2.0.2)
     nenv (0.3.0)
@@ -259,6 +274,7 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
+    stringex (2.6.0)
     temple (0.7.6)
     thor (0.19.1)
     thread_safe (0.3.5)
@@ -296,6 +312,8 @@ DEPENDENCIES
   guard-rspec!
   jquery-rails
   listen (~> 3.0.5)
+  mongoid!
+  mongoid_slug (>= 4.0.0)
   openregister-ruby!
   puma (~> 3.0)
   rails (>= 5.0.0.beta4, < 5.1)
