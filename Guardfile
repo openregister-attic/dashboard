@@ -1,4 +1,4 @@
-guard :rspec, cmd: "bundle exec rspec --fail-fast" do
+guard :rspec, cmd: "bin/rspec --fail-fast" do
   require "guard/rspec/dsl"
   dsl = Guard::RSpec::Dsl.new(self)
 
