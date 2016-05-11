@@ -15,9 +15,6 @@ gem 'turbolinks', '~> 5.x'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
-
 gem 'slim'
 gem 'govuk_frontend_toolkit'
 gem 'govuk_elements_rails'
@@ -28,6 +25,7 @@ gem 'openregister-ruby', git: 'https://github.com/robmckinnon/openregister-ruby.
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  gem 'capybara'
   gem 'rspec', git: 'https://github.com/rspec/rspec.git', branch: 'master'
   gem 'rspec-rails', git: 'https://github.com/rspec/rspec-rails.git', branch: 'master'
   gem 'rspec-core', git: 'https://github.com/rspec/rspec-core.git', branch: 'master'
