@@ -72,40 +72,43 @@ span.domain
 // Phase styles
 // ==========================================================================
 
-.proposed.heading-medium
-  background: $turquoise
-.prospect.heading-medium
-  background: $light-blue
-.discovery.heading-medium
+$proposed-colour: $grey-1
+$prospect-colour: $purple
+
+.proposed.phase
+  background: $proposed-colour
+.prospect.phase
+  background: $prospect-colour
+.discovery.phase
   background: $discovery-colour
-.alpha.heading-medium
+.alpha.phase
   background: $alpha-colour
-.beta.heading-medium
+.beta.phase
   background: $beta-colour
-.live.heading-medium
+.live.phase
   background: $live-colour
 
-.proposed.count
-  color: $turquoise
-.prospect.count
-  color: $light-blue
-.discovery.count
-  color: $discovery-colour
-.alpha.count
-  color: $alpha-colour
-.beta.count
-  color: $beta-colour
-.live.count
-  color: $live-colour
-
-.proposed.count, .prospect.count, .discovery.count, .alpha.count, .beta.count, .live.count
-  font-size: 80px
-  text-align: center
-  font-weight: bold
-  display: block
-
-.proposed.heading-medium, .prospect.heading-medium, .discovery.heading-medium, .alpha.heading-medium, .beta.heading-medium, .live.heading-medium
+.phase
   color: $page-colour
   text-align: center
   padding-top: 4.8px
   padding-bottom: 4.8px
+
+.proposed.phase-count
+  color: $proposed-colour
+.prospect.phase-count
+  color: $prospect-colour
+.discovery.phase-count
+  color: $discovery-colour
+.alpha.phase-count
+  color: $alpha-colour
+.beta.phase-count
+  color: $beta-colour
+.live.phase-count
+  color: $live-colour
+
+.phase-count
+  font-size: 80px
+  text-align: center
+  font-weight: bold
+  display: block
