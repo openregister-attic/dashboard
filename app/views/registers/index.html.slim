@@ -9,13 +9,8 @@ h1.heading-xlarge
 
 .grid-row
   - Rails.configuration.phases.each do |phase|
-    = render partial: 'phase_count', locals: { count: @registers_by_phase[phase].size, phase: phase }
-
-.grid-row
-  - Rails.configuration.phases.each do |phase|
     - registers = @registers_by_phase[phase]
     .column-one-sixth
-      - if registers.empty?
-        | &nbsp;
+      = render partial: 'phase_count', locals: { count: registers.size, phase: phase }
       - registers.each do |register|
         = render partial: 'register', object: register
