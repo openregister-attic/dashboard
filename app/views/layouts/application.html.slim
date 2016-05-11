@@ -1,5 +1,5 @@
 - content_for :page_title do
-  = "#{@page_title} - #{Rails.configuration.app_title}"
+  = "#{@page_title} - Registers Design Authority"
 
 - content_for :head do
   = raw stylesheet_link_tag("application", media: "all")
@@ -11,7 +11,18 @@
 
 - content_for :cookie_message, ""
 
-- content_for :body_start, "<main id='content' role='main'>".html_safe
-- content_for :body_end, "</main>".html_safe
+- content_for :header_class, 'with-proposition'
+- content_for :proposition_header do
+  .header-proposition
+    .content
+      nav#proposition-menu
+        a href='/' id='proposition-name'
+          | Registers Design Authority
+        p#proposition-link
+          a href='url-to-page-1'
+
+- content_for :content do
+  main id='content' role='main'
+    = yield
 
 = render template: "layouts/govuk_template"
