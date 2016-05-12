@@ -1,2 +1,21 @@
 en:
-  hello: "Hello world"
+  errors:
+    messages:
+      blank: is required
+  helpers:
+    fieldset:
+      register:
+        phase: What phase is this register?
+    label:
+      register:
+        register: Register name
+        text: Description
+        registry: Registry name
+    hint:
+      register:
+        register: |
+          e.g. public-body or food-premises-rating
+        text: |
+          Enter one line description
+        registry: |
+          e.g., cabinet-office or foreign-office
