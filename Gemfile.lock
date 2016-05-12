@@ -1,4 +1,11 @@
 GIT
+  remote: https://github.com/ministryofjustice/govuk_elements_form_builder.git
+  revision: 69c91c0896dd4c5982bbd59dcce40e9f058e7cf7
+  specs:
+    govuk_elements_form_builder (0.0.1)
+      rails (>= 4.2)
+
+GIT
   remote: https://github.com/mongodb/mongoid.git
   revision: 7c2ff52a0c5292b8e6bf3a9a29bbb19abae3dd5f
   specs:
@@ -25,7 +32,7 @@ GIT
 
 GIT
   remote: https://github.com/robmckinnon/openregister-ruby.git
-  revision: 02b9de841bfe9feef76f0d451a620045a9b947b4
+  revision: c2e7d73bb0c89cae49b85bf4717f3562b3aa8194
   specs:
     openregister-ruby (0.0.1)
       morph (~> 0.4.1)
@@ -310,6 +317,7 @@ DEPENDENCIES
   byebug
   capybara
   coffee-rails (~> 4.1.0)
+  govuk_elements_form_builder!
   govuk_elements_rails
   govuk_frontend_toolkit
   govuk_template

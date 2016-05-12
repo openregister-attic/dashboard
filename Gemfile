@@ -17,8 +17,9 @@ gem 'jquery-rails'
 
 gem 'slim'
 gem 'govuk_frontend_toolkit'
-gem 'govuk_elements_rails'
 gem 'govuk_template'
+gem 'govuk_elements_rails'
+gem 'govuk_elements_form_builder', git: 'https://github.com/ministryofjustice/govuk_elements_form_builder.git'
 
 gem 'openregister-ruby', git: 'https://github.com/robmckinnon/openregister-ruby.git'
 
