@@ -5,7 +5,14 @@ class RegistersByPhase
   end.freeze unless defined? EMPTY
 
   def call
-    registers = OpenRegister.registers + OpenRegister.registers(from_openregister: true)
+    registers = Register.all.to_a
+
+    registers.push(
+      *OpenRegister.registers
+    ).push(
+      *OpenRegister.registers(from_openregister: true)
+    )
+
     registers.delete_if {|r| r.register.nil?}
     registers.sort_by!(&:register)
     by_phase = registers.group_by(&:phase)
