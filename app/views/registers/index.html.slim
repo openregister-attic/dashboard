@@ -7,7 +7,10 @@ h1.heading-xlarge
 - #  Track registers progress.
 
 .grid-row
-  - Rails.configuration.phases.each do |phase|
+  .column-one-third
+    = link_to "Create proposed register", new_register_path, class: 'button'
+.grid-row
+  - Register::PHASES.each do |phase|
     - registers = @registers_by_phase[phase]
     .column-one-sixth
       = render partial: 'phase_count', locals: { count: registers.size, phase: phase }

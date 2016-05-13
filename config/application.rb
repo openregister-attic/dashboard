@@ -22,7 +22,7 @@ module Dashboard
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
 
-    config.phases = %w[proposed prospect discovery alpha beta live]
+    config.stub_registers_api_when_offline = false
 
     ActionView::Base.default_form_builder = GovukElementsFormBuilder::FormBuilder
   end

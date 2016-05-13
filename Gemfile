@@ -24,7 +24,6 @@ gem 'govuk_elements_form_builder', git: 'https://github.com/ministryofjustice/go
 gem 'openregister-ruby', git: 'https://github.com/robmckinnon/openregister-ruby.git'
 
 gem 'mongoid', git: 'https://github.com/mongodb/mongoid.git'
-gem 'mongoid-enum', git: 'https://github.com/robmckinnon/mongoid-enum.git'
 gem 'mongoid_slug', '>= 4.0.0'
 
 group :development, :test do
@@ -49,6 +48,10 @@ group :development do
   gem 'spring-commands-rspec'
 
   gem 'guard-rspec', require: false, git: 'https://github.com/robmckinnon/guard-rspec', branch: 'master'
+end
+
+group :test do
+  gem 'webmock'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
