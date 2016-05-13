@@ -13,6 +13,7 @@ class Register
   index({ register: 1 }, unique: true, name: 'register_index')
 
   validates :register, presence: true
+  validates_uniqueness_of :register
   validates_inclusion_of :phase, in: PHASES, allow_blank: false
 
   before_validation :parameterize_register_name

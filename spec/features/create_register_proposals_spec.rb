@@ -16,6 +16,8 @@ RSpec.feature "CreateRegisterProposals", type: :feature do
     allow(PublicBodies).to receive(:new).and_return -> { [] }
   end
 
+  after { Register.all.each(&:destroy) }
+
   scenario 'submit new register form with valid parameters' do
     visit registers_path
     click_on "Create proposed register"
