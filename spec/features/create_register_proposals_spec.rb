@@ -17,7 +17,9 @@ RSpec.feature "CreateRegisterProposals", type: :feature do
   end
 
   scenario 'submit new register form with valid parameters' do
-    visit new_register_path
+    visit registers_path
+    click_on "Create proposed register"
+
     attributes = valid_attributes
     attributes.each do |field, value|
       fill_in "register_#{field}", with: value unless field == :phase
