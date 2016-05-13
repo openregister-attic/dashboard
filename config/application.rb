@@ -23,5 +23,7 @@ module Dashboard
     # -- all .rb files in that directory are automatically loaded.
 
     config.phases = %w[proposed prospect discovery alpha beta live]
+
+    ActionView::Base.default_form_builder = GovukElementsFormBuilder::FormBuilder
   end
 end

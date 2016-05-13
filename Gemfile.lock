@@ -1,5 +1,12 @@
 GIT
-  remote: https://github.com/mongodb/mongoid
+  remote: https://github.com/ministryofjustice/govuk_elements_form_builder.git
+  revision: 69c91c0896dd4c5982bbd59dcce40e9f058e7cf7
+  specs:
+    govuk_elements_form_builder (0.0.1)
+      rails (>= 4.2)
+
+GIT
+  remote: https://github.com/mongodb/mongoid.git
   revision: 7c2ff52a0c5292b8e6bf3a9a29bbb19abae3dd5f
   specs:
     mongoid (6.0.0)
@@ -17,8 +24,15 @@ GIT
       guard-compat (~> 1.1)
 
 GIT
+  remote: https://github.com/robmckinnon/mongoid-enum.git
+  revision: b41661a7efef2428f98c964b0963be9f16022776
+  specs:
+    mongoid-enum (0.4.0)
+      mongoid (>= 5.0)
+
+GIT
   remote: https://github.com/robmckinnon/openregister-ruby.git
-  revision: 02b9de841bfe9feef76f0d451a620045a9b947b4
+  revision: c2e7d73bb0c89cae49b85bf4717f3562b3aa8194
   specs:
     openregister-ruby (0.0.1)
       morph (~> 0.4.1)
@@ -279,9 +293,6 @@ GEM
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (2.0.2)
-    turbolinks (5.0.0.beta2)
-      turbolinks-source
-    turbolinks-source (5.0.0.beta4)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     uglifier (3.0.0)
@@ -306,6 +317,7 @@ DEPENDENCIES
   byebug
   capybara
   coffee-rails (~> 4.1.0)
+  govuk_elements_form_builder!
   govuk_elements_rails
   govuk_frontend_toolkit
   govuk_template
@@ -313,6 +325,7 @@ DEPENDENCIES
   jquery-rails
   listen (~> 3.0.5)
   mongoid!
+  mongoid-enum!
   mongoid_slug (>= 4.0.0)
   openregister-ruby!
   puma (~> 3.0)
@@ -328,7 +341,6 @@ DEPENDENCIES
   spring
   spring-commands-rspec
   spring-watcher-listen (~> 2.0.0)
-  turbolinks (~> 5.x)
   tzinfo-data
   uglifier (>= 1.3.0)
   web-console

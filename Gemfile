@@ -9,7 +9,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 
 gem 'jquery-rails'
-gem 'turbolinks', '~> 5.x'
+# gem 'turbolinks', '~> 5.x'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.0'
 # Use ActiveModel has_secure_password
@@ -17,12 +17,14 @@ gem 'turbolinks', '~> 5.x'
 
 gem 'slim'
 gem 'govuk_frontend_toolkit'
-gem 'govuk_elements_rails'
 gem 'govuk_template'
+gem 'govuk_elements_rails'
+gem 'govuk_elements_form_builder', git: 'https://github.com/ministryofjustice/govuk_elements_form_builder.git'
 
 gem 'openregister-ruby', git: 'https://github.com/robmckinnon/openregister-ruby.git'
 
-gem 'mongoid', git: 'https://github.com/mongodb/mongoid'
+gem 'mongoid', git: 'https://github.com/mongodb/mongoid.git'
+gem 'mongoid-enum', git: 'https://github.com/robmckinnon/mongoid-enum.git'
 gem 'mongoid_slug', '>= 4.0.0'
 
 group :development, :test do
