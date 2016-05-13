@@ -7,5 +7,5 @@
       option value="#{b.public_body}"
         = b.name
   .form-group
-    = f.radio_button_fieldset :phase, inline: true, choices: Register::PHASE
+    = f.radio_button_fieldset :phase, inline: true, choices: Register::PHASES
   = f.submit class: 'button'

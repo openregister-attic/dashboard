@@ -24,13 +24,6 @@ GIT
       guard-compat (~> 1.1)
 
 GIT
-  remote: https://github.com/robmckinnon/mongoid-enum.git
-  revision: b41661a7efef2428f98c964b0963be9f16022776
-  specs:
-    mongoid-enum (0.4.0)
-      mongoid (>= 5.0)
-
-GIT
   remote: https://github.com/robmckinnon/openregister-ruby.git
   revision: c2e7d73bb0c89cae49b85bf4717f3562b3aa8194
   specs:
@@ -333,7 +326,6 @@ DEPENDENCIES
   jquery-rails
   listen (~> 3.0.5)
   mongoid!
-  mongoid-enum!
   mongoid_slug (>= 4.0.0)
   openregister-ruby!
   puma (~> 3.0)

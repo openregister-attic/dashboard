@@ -16,9 +16,9 @@ RSpec.describe Register, type: :model do
     expect(register).to be_valid
   end
 
-  it 'changes phase to symbol' do
+  it 'stores phase as string' do
     register = described_class.new valid_attributes
-    expect(register.phase).to eq :beta
+    expect(register.phase).to eq 'beta'
   end
 
   it 'is invalid when register blank' do
@@ -27,8 +27,8 @@ RSpec.describe Register, type: :model do
     expect(register.errors.full_messages).to eq ["Register is required"]
   end
 
-  it 'defaults phase to :proposed when phase not provided' do
+  it 'defaults phase to "proposed" when phase not provided' do
     register = described_class.new valid_attributes.except(:phase)
-    expect(register.phase).to eq :proposed
+    expect(register.phase).to eq 'proposed'
   end
 end

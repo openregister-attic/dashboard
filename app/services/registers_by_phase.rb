@@ -1,6 +1,6 @@
 class RegistersByPhase
 
-  EMPTY = Rails.configuration.phases.each_with_object({}) do |phase, hash|
+  EMPTY = Register::PHASES.each_with_object({}) do |phase, hash|
     hash[phase] = []
   end.freeze unless defined? EMPTY
 
