@@ -6,6 +6,7 @@ class RegistersController < ApplicationController
 
   def new
     @register = Register.new
+    @public_bodies = PublicBodies.new.call
   end
 
   def create
@@ -13,6 +14,7 @@ class RegistersController < ApplicationController
     if @register.save
       redirect_to action: :index
     else
+      @public_bodies = PublicBodies.new.call
       render :new
     end
   end

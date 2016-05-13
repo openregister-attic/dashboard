@@ -1,7 +1,11 @@
 == form_for @register do |f|
   = f.text_field :register
   = f.text_field :text
-  = f.text_field :registry
+  = f.text_field(:registry, class: 'awesomplete', list: 'public-bodies')
+  datalist#public-bodies
+    - @public_bodies.each do |b|
+      option value="#{b.public_body}"
+        = b.name
   .form-group
     = f.radio_button_fieldset :phase, inline: true, choices: Register::PHASE
   = f.submit class: 'button'

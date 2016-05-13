@@ -11,6 +11,11 @@ RSpec.feature "CreateRegisterProposals", type: :feature do
     }.merge(overrides)
   end
 
+  before do
+    allow(RegistersByPhase).to receive(:new).and_return -> { RegistersByPhase::EMPTY }
+    allow(PublicBodies).to receive(:new).and_return -> { [] }
+  end
+
   scenario 'submit new register form with valid parameters' do
     visit new_register_path
     attributes = valid_attributes
@@ -19,7 +24,7 @@ RSpec.feature "CreateRegisterProposals", type: :feature do
     end
     choose attributes[:phase].capitalize
     click_button 'Create Register'
-    expect(current_path).to eql(registers_path)
+    expect(current_path).to eql(root_path)
   end
 
   scenario 'submit new register form without parameters' do

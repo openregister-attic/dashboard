@@ -24,7 +24,7 @@ RSpec.describe Register, type: :model do
   it 'is invalid when register blank' do
     register = described_class.new valid_attributes(register: nil)
     expect(register).not_to be_valid
-    expect(register.errors.full_messages).to eq ["Register can't be blank"]
+    expect(register.errors.full_messages).to eq ["Register is required"]
   end
 
   it 'defaults phase to :proposed when phase not provided' do
