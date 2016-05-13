@@ -15,4 +15,12 @@ class Register
   validates :register, presence: true
   validates_inclusion_of :phase, in: PHASES, allow_blank: false
 
+  before_validation :parameterize_register_name
+
+  private
+
+  def parameterize_register_name
+    self.register = register.parameterize if register.present?
+  end
+
 end
