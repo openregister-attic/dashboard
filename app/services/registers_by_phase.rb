@@ -6,24 +6,26 @@ class RegistersByPhase
 
   def call
     registers = Register.all.to_a
+    add_deployed_registers! registers
 
+    registers.sort_by!(&:register)
+    by_phase = registers.group_by(&:phase)
+
+    RegistersByPhase::EMPTY.merge(by_phase)
+  end
+
+  private
+
+  def add_deployed_registers! registers
     registers.push(
       *OpenRegister.registers
     ).push(
       *OpenRegister.registers(from_openregister: true)
     )
-
     registers.delete_if {|r| r.register.nil?}
-    registers.sort_by!(&:register)
-    by_phase = registers.group_by(&:phase)
-
-    RegistersByPhase::EMPTY.merge(by_phase)
+    registers
   rescue SocketError => e
-    if Rails.configuration.stub_registers_api_when_offline
-      RegistersByPhase::EMPTY
-    else
-      raise e
-    end
+    raise e unless Rails.configuration.stub_registers_api_when_offline
   end
 
 end
