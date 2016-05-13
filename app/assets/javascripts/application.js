@@ -12,4 +12,5 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require awesomplete.min
 //= require_tree .
