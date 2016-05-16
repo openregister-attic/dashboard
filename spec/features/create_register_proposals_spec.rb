@@ -10,13 +10,13 @@ RSpec.feature "CreateRegisterProposals", type: :feature do
 
   after { Register.all.each(&:destroy) }
 
-  scenario 'submit new register form with valid parameters' do
+  scenario 'create new register entry with valid parameters' do
     given_a_user_chooses_to_create_a_register_entry
     when_they_create_with_valid_parameters
     then_they_see_register_on_dashboard
   end
 
-  scenario 'submit new register form with invalid parameters' do
+  scenario 'create new register entry with invalid parameters' do
     given_a_user_chooses_to_create_a_register_entry
     when_they_create_with_invalid_parameters
     then_they_see_validation_error_message
@@ -28,12 +28,14 @@ RSpec.feature "CreateRegisterProposals", type: :feature do
   end
 
   def when_they_create_with_valid_parameters
-    attributes = valid_attributes
-    attributes.each do |field, value|
-      fill_in "register_#{field}", with: value unless field == :phase
+    within 'form.new_register' do
+      attributes = valid_attributes
+      attributes.each do |field, value|
+        fill_in "register_#{field}", with: value unless field == :phase
+      end
+      choose attributes[:phase].capitalize
+      click_create
     end
-    choose attributes[:phase].capitalize
-    click_create
   end
 
   def then_they_see_register_on_dashboard
@@ -42,11 +44,15 @@ RSpec.feature "CreateRegisterProposals", type: :feature do
   end
 
   def when_they_create_with_invalid_parameters
-    click_create
+    within 'form.new_register' do
+      click_create
+    end
   end
 
   def then_they_see_validation_error_message
-    expect(page).to have_content('Register name is required')
+    within('#content') do
+      expect(page).to have_content('Register name is required')
+    end
   end
 
   def valid_attributes overrides={}
