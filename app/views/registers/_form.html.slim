@@ -7,5 +7,8 @@
       option value="#{b.public_body}"
         = b.name
   .form-group
-    = f.radio_button_fieldset :phase, inline: true, choices: Register::PHASES
-  = f.submit class: 'button'
+    = f.radio_button_fieldset(:phase, inline: true, choices: Register::PHASES).sub('heading-medium','form-label').html_safe
+  .form-group
+    = f.submit class: 'button'
+  .form-group
+    = link_to t('cancel', scope: 'helpers.submit'), registers_path, class: 'form-element'

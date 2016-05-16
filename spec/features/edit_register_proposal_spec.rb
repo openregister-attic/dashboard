@@ -22,6 +22,12 @@ RSpec.feature "EditRegisterProposal", type: :feature do
     then_they_see_validation_error_message
   end
 
+  scenario 'cancel update register entry' do
+    given_a_user_chooses_to_edit_a_register_entry
+    when_they_cancel_register_entry
+    then_they_see_register_dashboard
+  end
+
   def given_a_user_chooses_to_edit_a_register_entry
     RegisterCreate.new(valid_attributes).call
     visit registers_path
@@ -54,6 +60,16 @@ RSpec.feature "EditRegisterProposal", type: :feature do
     within('#content') do
       expect(page).to have_content('Register name is required')
     end
+  end
+
+  def when_they_cancel_register_entry
+    within('#content') do
+      click_on 'Cancel'
+    end
+  end
+
+  def then_they_see_register_dashboard
+    expect(current_path).to eql(registers_path)
   end
 
   def valid_attributes overrides={}

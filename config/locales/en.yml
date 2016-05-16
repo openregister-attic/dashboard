@@ -20,6 +20,7 @@ en:
         registry: |
           e.g., cabinet-office or foreign-office
     submit:
+      cancel: Cancel
       register:
         create: Create register entry
         update: Update register entry
