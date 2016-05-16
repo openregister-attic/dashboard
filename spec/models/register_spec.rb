@@ -11,6 +11,8 @@ RSpec.describe Register, type: :model do
     }.merge(overrides)
   end
 
+  after { Register.all.each(&:destroy) }
+
   it 'creates with valid attributes' do
     register = described_class.new valid_attributes
     expect(register).to be_valid
@@ -36,5 +38,14 @@ RSpec.describe Register, type: :model do
   it 'defaults phase to "proposed" when phase not provided' do
     register = described_class.new valid_attributes.except(:phase)
     expect(register.phase).to eq 'proposed'
+  end
+
+  it 'is invalid when register name is a duplicate' do
+    existing_register = described_class.new valid_attributes
+    existing_register.save
+
+    register = described_class.new valid_attributes
+    expect(register).not_to be_valid
+    expect(register.errors.full_messages).to eq ["Register is already taken"]
   end
 end
