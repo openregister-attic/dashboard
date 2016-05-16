@@ -22,3 +22,4 @@ en:
     submit:
       register:
         create: Create register entry
+        update: Update register entry

@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   resources :registers, only: [
       :index,
       :new,
-      :create
+      :create,
+      :edit,
+      :update,
     ]
 end
