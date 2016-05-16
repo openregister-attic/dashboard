@@ -19,6 +19,21 @@ class RegistersController < ApplicationController
     end
   end
 
+  def edit
+    @register = Register.find(params[:id])
+    @public_bodies = PublicBodies.new.call
+  end
+
+  def update
+    @register = RegisterUpdate.new(params[:id], register_params).call
+    if !@register.try(:changed?)
+      redirect_to action: :index
+    else
+      @public_bodies = PublicBodies.new.call
+      render :edit
+    end
+  end
+
   private
 
   def register_params
