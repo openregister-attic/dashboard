@@ -11,7 +11,7 @@ class RegistersController < ApplicationController
 
   def create
     @register = RegisterCreate.new(register_params).call
-    if @register.save
+    if @register.persisted?
       redirect_to action: :index
     else
       @public_bodies = PublicBodies.new.call

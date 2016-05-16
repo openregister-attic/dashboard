@@ -8,7 +8,7 @@ h1.heading-xlarge
 
 .grid-row
   .column-one-third
-    = link_to "Create proposed register", new_register_path, class: 'button'
+    = link_to I18n.t('register.create', scope: 'helpers.submit'), new_register_path, class: 'button'
 .grid-row
   - Register::PHASES.each do |phase|
     - registers = @registers_by_phase[phase]
