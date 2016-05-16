@@ -19,3 +19,6 @@ en:
           Enter one line description
         registry: |
           e.g., cabinet-office or foreign-office
+    submit:
+      register:
+        create: Create register entry

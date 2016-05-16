@@ -5,7 +5,9 @@ class RegisterCreate
   end
 
   def call
-    Register.new(@params)
+    register = Register.new(@params)
+    register.save
+    register
   end
 
 end
