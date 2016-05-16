@@ -1,6 +1,9 @@
 .register
   h3.heading-small
-    = link_to register.register, edit_register_path(register)
+    - if register.try(:persisted?)
+      = link_to register.register, edit_register_path(register)
+    - else
+      = register.register
   - if false # register._from_openregister
     p
       span.domain
