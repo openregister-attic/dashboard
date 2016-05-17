@@ -1,8 +1,21 @@
 - @page_title = "#{@register.register.capitalize} Register"
 
 .grid-row
-
   .column-two-thirds
     h1.heading-xlarge= @page_title
+    p.lede= @register.text
 
-    = link_to t('register.edit', scope: 'helpers.submit'), edit_register_path(@register), class: 'button'
+  .column-third
+    aside#related
+      .related-container
+        .group
+          .phase-circle
+            p class="circle #{@register.phase} phase"
+            p.circle-label= @register.phase.capitalize
+          h4.heading-small Registry
+          p= @register.registry
+
+.grid-row
+  .column-two-thirds
+    p= link_to t('register.edit', scope: 'helpers.link'), edit_register_path(@register), class: 'button'
+    p= link_to t('register.index', scope: 'helpers.link'), registers_path, class: 'link-back'
