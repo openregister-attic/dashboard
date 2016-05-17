@@ -13,7 +13,7 @@ RSpec.feature "EditRegisterEntry", type: :feature do
   scenario 'update register entry with valid parameters' do
     given_a_user_chooses_to_edit_a_register_entry
     when_they_update_with_valid_parameters
-    then_they_see_register_on_dashboard_with_changed_parameters
+    then_they_see_register_entry_with_changed_parameters
   end
 
   scenario 'update register entry with invalid parameters' do
@@ -37,17 +37,16 @@ RSpec.feature "EditRegisterEntry", type: :feature do
 
   def when_they_update_with_valid_parameters
     within 'form.edit_register' do
-      attributes = valid_attributes
-      attributes.each do |field, value|
-        fill_in "register_#{field}", with: value unless field == :phase
-      end
       choose 'Live'
       click_update
     end
   end
 
-  def then_they_see_register_on_dashboard_with_changed_parameters
-    expect(current_path).to eql(root_path)
+  def then_they_see_register_entry_with_changed_parameters
+    expect(current_path).to eql(register_path(Register.last))
+    within('.phase-circle') do
+      expect(page).to have_content('Live')
+    end
   end
 
   def when_they_update_with_invalid_parameters

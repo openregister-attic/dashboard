@@ -31,7 +31,7 @@ class RegistersController < ApplicationController
   def update
     @register = RegisterUpdate.new(params[:id], register_params).call
     if !@register.try(:changed?)
-      redirect_to action: :index
+      redirect_to action: :show, id: params[:id]
     else
       @public_bodies = PublicBodies.new.call
       render :edit
