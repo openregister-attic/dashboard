@@ -1,7 +1,7 @@
 require 'rails_helper'
 require 'openregister'
 
-RSpec.feature "CreateRegisterProposals", type: :feature do
+RSpec.feature "CreateRegisterEntry", type: :feature do
 
   before do
     allow(OpenRegister).to receive(:registers).and_return []
