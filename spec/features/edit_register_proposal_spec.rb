@@ -32,6 +32,7 @@ RSpec.feature "EditRegisterProposal", type: :feature do
     RegisterCreate.new(valid_attributes).call
     visit registers_path
     click_on "country"
+    click_on "Edit register entry"
   end
 
   def when_they_update_with_valid_parameters

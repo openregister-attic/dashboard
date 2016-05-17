@@ -19,6 +19,10 @@ class RegistersController < ApplicationController
     end
   end
 
+  def show
+    @register = Register.find(params[:id])
+  end
+
   def edit
     @register = Register.find(params[:id])
     @public_bodies = PublicBodies.new.call

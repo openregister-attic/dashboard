@@ -1,0 +1,8 @@
+- @page_title = "#{@register.register.capitalize} Register"
+
+.grid-row
+
+  .column-two-thirds
+    h1.heading-xlarge= @page_title
+
+    = link_to t('register.edit', scope: 'helpers.submit'), edit_register_path(@register), class: 'button'

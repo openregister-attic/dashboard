@@ -1,7 +1,7 @@
 .register
   h3.heading-small
     - if register.try(:persisted?)
-      = link_to register.register, edit_register_path(register)
+      = link_to register.register, register_path(register)
     - else
       = register.register
   - if false # register._from_openregister
