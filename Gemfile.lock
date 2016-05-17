@@ -25,7 +25,7 @@ GIT
 
 GIT
   remote: https://github.com/robmckinnon/openregister-ruby.git
-  revision: c2e7d73bb0c89cae49b85bf4717f3562b3aa8194
+  revision: fdc1357720b25465ccb9e4731a1b29304ba0b3f4
   specs:
     openregister-ruby (0.0.1)
       morph (~> 0.4.1)
@@ -200,7 +200,7 @@ GEM
     method_source (0.8.2)
     mime-types (2.99.1)
     mini_portile2 (2.0.0)
-    minitest (5.8.4)
+    minitest (5.9.0)
     mongo (2.2.5)
       bson (~> 4.0)
     mongoid_slug (4.0.0)
