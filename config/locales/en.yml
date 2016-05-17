@@ -19,6 +19,10 @@ en:
           Enter one line description
         registry: |
           e.g., cabinet-office or foreign-office
+    link:
+      register:
+        edit: Edit register entry
+        index: Return to dashboard
     submit:
       cancel: Cancel
       register:

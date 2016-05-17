@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       :index,
       :new,
       :create,
+      :show,
       :edit,
       :update,
     ]

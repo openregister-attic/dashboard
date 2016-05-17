@@ -1,7 +1,7 @@
 require 'rails_helper'
 require 'openregister'
 
-RSpec.feature "EditRegisterProposal", type: :feature do
+RSpec.feature "CreateRegisterEntry", type: :feature do
 
   before do
     allow(OpenRegister).to receive(:registers).and_return []
@@ -10,49 +10,48 @@ RSpec.feature "EditRegisterProposal", type: :feature do
 
   after { Register.all.each(&:destroy) }
 
-  scenario 'update register entry with valid parameters' do
-    given_a_user_chooses_to_edit_a_register_entry
-    when_they_update_with_valid_parameters
-    then_they_see_register_on_dashboard_with_changed_parameters
+  scenario 'create new register entry with valid parameters' do
+    given_a_user_chooses_to_create_a_register_entry
+    when_they_create_with_valid_parameters
+    then_they_see_register_on_dashboard
   end
 
-  scenario 'update register entry with invalid parameters' do
-    given_a_user_chooses_to_edit_a_register_entry
-    when_they_update_with_invalid_parameters
+  scenario 'create new register entry with invalid parameters' do
+    given_a_user_chooses_to_create_a_register_entry
+    when_they_create_with_invalid_parameters
     then_they_see_validation_error_message
   end
 
-  scenario 'cancel update register entry' do
-    given_a_user_chooses_to_edit_a_register_entry
+  scenario 'cancel new register entry' do
+    given_a_user_chooses_to_create_a_register_entry
     when_they_cancel_register_entry
     then_they_see_register_dashboard
   end
 
-  def given_a_user_chooses_to_edit_a_register_entry
-    RegisterCreate.new(valid_attributes).call
+  def given_a_user_chooses_to_create_a_register_entry
     visit registers_path
-    click_on "country"
+    click_on "Create register entry"
   end
 
-  def when_they_update_with_valid_parameters
-    within 'form.edit_register' do
+  def when_they_create_with_valid_parameters
+    within 'form.new_register' do
       attributes = valid_attributes
       attributes.each do |field, value|
         fill_in "register_#{field}", with: value unless field == :phase
       end
-      choose 'Live'
-      click_update
+      choose attributes[:phase].capitalize
+      click_create
     end
   end
 
-  def then_they_see_register_on_dashboard_with_changed_parameters
+  def then_they_see_register_on_dashboard
     expect(current_path).to eql(root_path)
+    expect(page.body).to have_content('country')
   end
 
-  def when_they_update_with_invalid_parameters
-    within 'form.edit_register' do
-      fill_in "register_register", with: ""
-      click_update
+  def when_they_create_with_invalid_parameters
+    within 'form.new_register' do
+      click_create
     end
   end
 
@@ -81,8 +80,8 @@ RSpec.feature "EditRegisterProposal", type: :feature do
     }.merge(overrides)
   end
 
-  def click_update
-    click_button 'Update register entry'
+  def click_create
+    click_button 'Create register entry'
   end
 
 end
