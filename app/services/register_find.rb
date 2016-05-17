@@ -8,7 +8,7 @@ class RegisterFind
     if Register.where(id: @id).exists?
       register = Register.find(@id)
     else
-      registers = RegistersByPhase.new.call.values.flatten
+      registers = RegistersByPhase.new.call.values.flatten.reverse
 
       registers.detect {|r| r.register == @id }
     end
