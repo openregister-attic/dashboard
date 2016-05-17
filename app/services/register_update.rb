@@ -6,11 +6,11 @@ class RegisterUpdate
   end
 
   def call
-    register = Register.find(@id)
-    register.update_attributes(@params)
-    register
-  rescue Mongoid::Errors::DocumentNotFound
-    nil
+    if Register.where(id: @id).exists?
+      register = Register.find(@id)
+      register.update_attributes(@params)
+      register
+    end
   end
 
 end

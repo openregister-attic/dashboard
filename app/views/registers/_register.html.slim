@@ -3,7 +3,7 @@
     - if register.try(:persisted?)
       = link_to register.register, register_path(register)
     - else
-      = register.register
+      = link_to register.register, register_path(id: register.register)
   - if false # register._from_openregister
     p
       span.domain

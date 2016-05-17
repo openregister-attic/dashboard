@@ -12,10 +12,14 @@
           .phase-circle
             p class="circle #{@register.phase} phase"
             p.circle-label= @register.phase.capitalize
+          - if @register.try(:_uri).present?
+            h4.heading-small Register URI
+            p= link_to @register._uri, @register._uri, rel: 'external'
           h4.heading-small Registry
           p= @register.registry
 
 .grid-row
   .column-two-thirds
-    p= link_to t('register.edit', scope: 'helpers.link'), edit_register_path(@register), class: 'button'
+    - if @register.try(:persisted?)
+      p= link_to t('register.edit', scope: 'helpers.link'), edit_register_path(@register), class: 'button'
     p= link_to t('register.index', scope: 'helpers.link'), registers_path, class: 'link-back'

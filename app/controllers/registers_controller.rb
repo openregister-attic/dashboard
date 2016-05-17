@@ -20,7 +20,7 @@ class RegistersController < ApplicationController
   end
 
   def show
-    @register = Register.find(params[:id])
+    @register = RegisterFind.new(params[:id]).call
   end
 
   def edit
