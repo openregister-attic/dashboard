@@ -20,7 +20,7 @@ class RegistersByPhase
     registers.push(
       *OpenRegister.registers
     ).push(
-      *OpenRegister.registers(from_openregister: true)
+      *OpenRegister.registers(:alpha)
     )
     registers.delete_if {|r| r.register.nil?}
     registers

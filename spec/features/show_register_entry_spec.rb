@@ -7,7 +7,7 @@ RSpec.feature "ShowRegisterEntry", type: :feature do
     allow(OpenRegister).to receive(:registers).and_return [
       double(attributes(register: 'api-country', _uri: 'http://country.register/'))
     ]
-    allow(OpenRegister).to receive(:registers).with(from_openregister: true).and_return []
+    allow(OpenRegister).to receive(:registers).with(:alpha).and_return []
     allow(PublicBodies).to receive(:new).and_return -> { [] }
   end
 
