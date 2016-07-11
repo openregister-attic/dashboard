@@ -1,24 +1,20 @@
-# README
+# Dashboard
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Deployment
 
-Things you may want to cover:
+To setup fresh heroku deployment:
 
-* Ruby version
+```sh
+heroku create --region eu --org <org>
 
-* System dependencies
+heroku apps:rename <name>
 
-* Configuration
+heroku addons:create mongolab:sandbox
 
-* Database creation
+heroku addons:destroy heroku-postgresql --confirm <name>
 
-* Database initialization
+heroku config:set USER=<user> PASS=<pass>
 
-* How to run the test suite
+git push heroku master
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+heroku open
