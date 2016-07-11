@@ -17,6 +17,7 @@ RSpec.describe RegistersByPhase do
   it 'returns registers from API calls grouped by phase' do
     expect(OpenRegister).to receive(:registers).and_return [beta_register]
     expect(OpenRegister).to receive(:registers).with(:alpha).and_return [alpha_register]
+    expect(OpenRegister).to receive(:registers).with(:discovery).and_return []
     expect(Register).to receive(:all).and_return [persisted_register]
 
     x = RegistersByPhase.new

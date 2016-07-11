@@ -21,6 +21,8 @@ class RegistersByPhase
       *OpenRegister.registers
     ).push(
       *OpenRegister.registers(:alpha)
+    ).push(
+      *OpenRegister.registers(:discovery)
     )
     registers.delete_if {|r| r.register.nil?}
     registers
