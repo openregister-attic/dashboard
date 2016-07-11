@@ -2,7 +2,7 @@ class PublicBodies
 
   def call
     Rails.cache.fetch('public-bodies', expires_in: 1.day) do
-      register = OpenRegister.register 'public-body', from_openregister: true
+      register = OpenRegister.register 'public-body', :alpha
       public_bodies = register._all_records
       public_bodies.sort_by!(&:name)
       public_bodies
