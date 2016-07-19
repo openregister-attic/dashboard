@@ -24,10 +24,10 @@ GIT
 
 GIT
   remote: https://github.com/robmckinnon/openregister-ruby.git
-  revision: 6e0eab4abf4b72441f14c67da5da7344a6b01a98
+  revision: bdd351a1440b0a82a9ed5988be33d347652b7e18
   specs:
     openregister-ruby (0.0.1)
-      morph (~> 0.4.1)
+      morph (~> 0.5.0)
       rest-client (~> 1)
 
 GIT
@@ -204,7 +204,7 @@ GEM
     mongoid_slug (4.0.0)
       mongoid (>= 3.0)
       stringex (~> 2.0)
-    morph (0.4.1)
+    morph (0.5.0)
       activesupport (>= 2.0.2)
     nenv (0.3.0)
     netrc (0.11.0)
