@@ -23,6 +23,8 @@ en:
       register:
         edit: Edit register entry
         index: Return to dashboard
+      record:
+        new: New record prototype
     submit:
       cancel: Cancel
       register:

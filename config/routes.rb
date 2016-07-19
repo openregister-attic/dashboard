@@ -9,5 +9,10 @@ Rails.application.routes.draw do
       :show,
       :edit,
       :update,
-    ]
+    ] do
+  end
+
+  resources :records, only: [
+      :new
+  ]
 end

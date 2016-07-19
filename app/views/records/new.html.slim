@@ -1,0 +1,13 @@
+- @page_title = "Create new #{@register.register} record"
+
+h1.heading-xlarge
+  = @page_title
+
+== form_tag do |f|
+  - @record._register._fields.each do |field|
+    div.form-group
+      = label_tag(field.field, nil, class: "form-label") do
+        = field.field.gsub('-',' ').humanize
+        span.form-hint= field.text + "(#{field.datatype})"
+
+      = text_field_tag(field.field, @record.send(field.field.underscore), class: "form-control")

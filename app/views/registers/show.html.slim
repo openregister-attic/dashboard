@@ -22,4 +22,6 @@
   .column-two-thirds
     - if @register.try(:persisted?)
       p= link_to t('register.edit', scope: 'helpers.link'), edit_register_path(@register), class: 'button'
+    - else
+      p= link_to t('record.new', scope: 'helpers.link'), new_record_path(register: @register.register), class: 'button'
     p= link_to t('register.index', scope: 'helpers.link'), registers_path, class: 'link-back'
